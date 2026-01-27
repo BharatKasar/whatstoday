@@ -11,7 +11,22 @@ app.get("/", (req, res) => {
 
 app.get("/api/today", (req, res) => {
     const result = commonService.canDoFromDate();
-    res.send(result);
+    res.send(`
+        <html>
+        <body style="
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            font-family:sans-serif;
+            background:#111;
+        ">
+            <h1 style="font-size:8rem;color:${result ? "lime" : "red"}">
+            ${result ? "YES" : "NO"}
+            </h1>
+        </body>
+        </html>
+    `);
 });
 
 app.listen(PORT, () => {
