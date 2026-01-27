@@ -32,7 +32,7 @@ class CommonService {
 
 
     canDoFromDate = (startDate, today = new Date()) =>{
-        if (!startDate) startDate = "2026-01-26";
+        if (!startDate) startDate = "2026-01-27";
         const DAY = 86400000;
         const diff = Math.floor((today - new Date(startDate)) / DAY);
 
